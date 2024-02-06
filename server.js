@@ -17,6 +17,23 @@ const express = require("express");
 // create application object
 const app = express();
 
+// import routers
+const petRouter = require('./routes/pet')
+
+const cors = require("cors")
+const morgan = require("morgan")
+
+///////////////////////////////
+// MIDDLEWARE
+////////////////////////////////
+app.use(express.urlencoded({extended:true}))
+app.use(express.json());
+
+app.use(cors());
+app.use(morgan("dev"));
+
+app.use('/pet', petRouter)
+
 ///////////////////////////////
 // ROUTES
 ////////////////////////////////
