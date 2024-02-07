@@ -5,34 +5,25 @@
 const express = require('express')
 const router = express.Router()
 
+const petCtrl = require('../controllers/pet')
+
 ///////////////////////////////
 // ROUTES
 ////////////////////////////////
 
 // PET INDEX ROUTE
-router.get("/", async (req, res) => {
-	res.status(200).json({message: "pet index route"})
-});
+router.get("/", petCtrl.index)
 
 // PET CREATE ROUTE
-router.post("/", async (req, res) =>  {
-	res.status(201).json({message: "pet create route"})
-});
+router.post("/", petCtrl.create)
 
 // PET SHOW ROUTE
-router.get("/:id", (req, res) => {
-	res.status(200).json({message: "pet show route: " + req.params.id })
-});
+router.get("/:id", petCtrl.show)
 
 // PET DELETE ROUTE
-router.delete("/:id", (req, res) => {
-	res.status(200).json({message: "pet delete route: " + req.params.id })
-});
+router.delete("/:id", petCtrl.delete)
 
 // PET UPDATE ROUTE
-router.put("/:id", (req, res) => {
-	console.log(req.body)
-	res.status(200).json({message: "pet update route: " + req.params.id })
-});
+router.put("/:id", petCtrl.update)
 
 module.exports = router
