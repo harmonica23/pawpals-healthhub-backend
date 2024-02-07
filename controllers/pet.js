@@ -30,15 +30,13 @@ async function create(req, res, next) {
 // PET SHOW ACTION
 async function show(req, res, next) {
     try {
-        // send one person
+        // send one pet
         res.json(await Pet.findById(req.params.id));
     } catch (error) {
         //send error
         res.status(400).json(error);
     }
 };
-
-// ... the remaining pet controller actions will go below
 
 // PET DESTROY ACTION
 async function destroy(req, res, next) {
