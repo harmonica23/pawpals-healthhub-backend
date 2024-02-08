@@ -25,7 +25,7 @@ const petRouter = require('./routes/pet')
 const userRouter = require('./routes/user')
 const vaxRouter = require('./routes/vax')
 const vetConsultRouter = require('./routes/vetConsult')
-const AuthRouter = require('./routes/AuthRouter')
+const AuthRouter = require('./routes/auth.js')
 
 const cors = require("cors")
 const morgan = require("morgan")
