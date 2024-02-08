@@ -5,7 +5,7 @@
 const express = require('express')
 const router = express.Router()
 
-const incidentCtrl = require('../controllers/diet')
+const incidentCtrl = require('../controllers/incident')
 
 ///////////////////////////////
 // ROUTES

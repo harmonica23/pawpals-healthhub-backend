@@ -5,7 +5,7 @@
 const express = require('express')
 const router = express.Router()
 
-const vaxCtrl = require('../controllers/diet')
+const vaxCtrl = require('../controllers/vax')
 
 ///////////////////////////////
 // ROUTES

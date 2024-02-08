@@ -5,7 +5,7 @@
 const express = require('express')
 const router = express.Router()
 
-const vetConsultCtrl = require('../controllers/diet')
+const vetConsultCtrl = require('../controllers/vetConsult')
 
 ///////////////////////////////
 // ROUTES
