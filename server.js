@@ -25,6 +25,8 @@ const petRouter = require('./routes/pet')
 const userRouter = require('./routes/user')
 const vaxRouter = require('./routes/vax')
 const vetConsultRouter = require('./routes/vetconsult')
+const AuthRouter = require('./routes/AuthRouter')
+const PostRouter = require('./routes/PostRouter')
 
 const cors = require("cors")
 const morgan = require("morgan")
@@ -45,6 +47,8 @@ app.use('/pet', petRouter)
 app.use('/user', userRouter)
 app.use('/vax', vaxRouter)
 app.use('/vetconsult', vetConsultRouter)
+app.use('/auth', AuthRouter)
+app.use('/posts', PostRouter)
 
 ///////////////////////////////
 // ROUTES
