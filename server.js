@@ -46,7 +46,7 @@ app.use('/med', medRouter)
 app.use('/pet', petRouter)
 app.use('/user', userRouter)
 app.use('/vax', vaxRouter)
-app.use('/vetconsult', vetConsultRouter)
+app.use('/vetConsult', vetConsultRouter)
 app.use('/auth', AuthRouter)
 app.use('/posts', PostRouter)
 
