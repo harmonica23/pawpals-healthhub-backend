@@ -11,11 +11,11 @@ const UserSchema = new Schema({
         type: String, 
         required: true,
     },
-    password: {
+    email: {
         type: String,
         required: true,
     },
-    email: {
+    passwordDigest: {
         type: String,
         required: true,
     },

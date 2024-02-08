@@ -1,8 +1,8 @@
 const router = require('express').Router()
-const controller = require('../controllers/AuthController')
+const controller = require('../controllers/duck')
 
 router.post('/login', controller.Login)
 router.post('/register', controller.Register)
-router.put('/update-password/:user_id', controller.UpdatePassword)
+// router.put('/update-password/:user_id', controller.UpdatePassword)
 
 module.exports = router
