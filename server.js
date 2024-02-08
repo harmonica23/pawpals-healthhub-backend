@@ -18,7 +18,13 @@ const express = require("express");
 const app = express();
 
 // import routers
+const dietRouter = require('./routes/diet')
+const incidentRouter = require('./routes/incident')
+const medRouter = require('./routes/med')
 const petRouter = require('./routes/pet')
+const userRouter = require('./routes/user')
+const vaxRouter = require('./routes/vax')
+const vetConsultRouter = require('./routes/vetconsult')
 
 const cors = require("cors")
 const morgan = require("morgan")
@@ -32,7 +38,13 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
 
+app.use('/diet', dietRouter)
+app.use('/incident', incidentRouter)
+app.use('/med', medRouter)
 app.use('/pet', petRouter)
+app.use('/user', userRouter)
+app.use('/vax', vaxRouter)
+app.use('/vetconsult', vetConsultRouter)
 
 ///////////////////////////////
 // ROUTES
