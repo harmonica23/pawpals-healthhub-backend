@@ -52,11 +52,11 @@ const stripToken = (req, res, next) => {
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, "uploads/"); // Set the destination folder for uploaded files
+        cb(null, "uploads/"); 
     },
     filename: function (req, file, cb) {
         const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-        cb(null, file.fieldname + "-" + uniqueSuffix + ".jpg"); // Set the filename for uploaded files
+        cb(null, file.fieldname + "-" + uniqueSuffix + ".jpg");
     },
 });
 

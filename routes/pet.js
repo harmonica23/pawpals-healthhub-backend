@@ -4,7 +4,7 @@
 
 const express = require('express')
 const router = express.Router()
-const upload = require('../middleware/index')
+const { upload } = require('../middleware/index')
 const petCtrl = require('../controllers/pet')
 
 ///////////////////////////////
