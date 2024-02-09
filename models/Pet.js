@@ -8,6 +8,7 @@ const Schema = mongoose.Schema
 ////////////////////////////////
 const genderEnum = ["Male", "Female", "Unknown"]
 const kindEnum = ["Cat", "Dog", "Bird", "Fish", "Lizard", "Snake", "Rabbit", "Hamster", "Guinea Pig", "Ferret", "Turtle", "Other"]
+const spayNeutEnum = ["Spayed", "Neutered", "Intact"]
 
 const PetSchema = new Schema({
     name: {
@@ -28,8 +29,8 @@ const PetSchema = new Schema({
         enum: genderEnum,
     },
     spayNeuterStatus: {
-        type: Boolean,
-        required: true,
+        type: String,
+        enum: spayNeutEnum,
     },
     image: {
         type: String,

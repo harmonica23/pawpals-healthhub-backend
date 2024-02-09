@@ -19,13 +19,28 @@ async function index(req, res, next) {
 // PET CREATE ACTION
 async function create(req, res, next) {
     try {
-        // create new pet
-        res.json(await Pet.create(req.body));
+        // Extract necessary data from the request
+        const { name, birthday, kind, gender, spayNeuterStatus } = req.body;
+        const imagePath = req.file ? req.file.path : null;
+
+        // Create new pet with image path
+        const newPet = await Pet.create({
+            name,
+            birthday,
+            kind,
+            gender,
+            spayNeuterStatus,
+            image: imagePath,
+        });
+
+        // Send the created pet as a response
+        res.json(newPet);
     } catch (error) {
-        //send error
+        // Handle errors
+        console.error(error);
         res.status(400).json(error);
     }
-};
+}
 
 // PET SHOW ACTION
 async function show(req, res, next) {
