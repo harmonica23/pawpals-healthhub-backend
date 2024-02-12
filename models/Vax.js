@@ -7,6 +7,10 @@ const Schema = mongoose.Schema
 // MODELS
 ////////////////////////////////
 const VaxSchema = new Schema({
+    pet: {
+        type: Schema.Types.ObjectId,
+        ref: "Pet",
+    },
     name: {
         type: String, 
         required: true,

@@ -26,5 +26,13 @@ router.delete("/:id", medCtrl.delete)
 // MEDICATION UPDATE ROUTE
 router.put("/:id", medCtrl.update)
 
+// MED BY PET
+router.get("/pet/:id", medCtrl.medsByPet)
+
+// DELETE MED BY PET
+router.get("/pet/:id", medCtrl.deleteMedsByPet)
+
+
+
 
 module.exports = router

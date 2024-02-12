@@ -6,9 +6,13 @@ const Schema = mongoose.Schema
 ///////////////////////////////
 // MODELS
 ////////////////////////////////
-const visitTypeEnum = ["Healthy", "Injury", "Illness", "Treatment", "Recheck", "Procedure", "Other"]
+const visitTypeEnum = ["healthy", "injury", "illness", "treatment", "recheck", "procedure", "other"]
 
 const VetConsultSchema = new Schema({
+    pet: {
+        type: Schema.Types.ObjectId,
+        ref: "Pet",
+    },
     date: {
         type: Date, 
         required: true,

@@ -62,11 +62,35 @@ async function update(req, res, next) {
     }
 };
 
+// DIET BY PET
+async function dietsByPet(req, res, next) {
+    try {
+        res.json(
+            await Diet.find({pet:req.params.id})
+        );
+    } catch (error) {
+        res.status(400).json(error);
+    }
+};
+
+// DELETE DIET BY PET
+async function deleteDietsByPet(req, res, next) {
+    try {
+        res.json(
+            await Diet.find({pet:req.params.id})
+        );
+    } catch (error) {
+        res.status(400).json(error);
+    }
+};
+
 // EXPORT Controller Action
 module.exports = {
     index,
     create,
     show,
     delete: destroy,
-	update
+	update,
+    dietsByPet,
+    deleteDietsByPet
 }

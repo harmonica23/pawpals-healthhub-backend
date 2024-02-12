@@ -38,6 +38,7 @@ async function show(req, res, next) {
     }
 };
 
+
 // INCIDENT DESTROY ACTION
 async function destroy(req, res, next) {
     try {
@@ -62,11 +63,35 @@ async function update(req, res, next) {
     }
 };
 
+// INCIDENTS BY PET
+async function incidentsByPet(req, res, next) {
+    try {
+        res.json(
+            await Incident.find({ pet: req.params.id })
+        );
+    } catch (error) {
+        res.status(400).json(error);
+    }
+};
+
+// DELETE INCIDENTS BY PET
+async function deleteIncidentsByPet(req, res, next) {
+    try {
+        res.json(
+            await Incident.find({ pet: req.params.id })
+        );
+    } catch (error) {
+        res.status(400).json(error);
+    }
+};
+
 // EXPORT Controller Action
 module.exports = {
     index,
     create,
     show,
     delete: destroy,
-	update
+    update,
+    incidentsByPet,
+    deleteIncidentsByPet
 }

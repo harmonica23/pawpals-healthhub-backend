@@ -6,9 +6,9 @@ const Schema = mongoose.Schema
 ///////////////////////////////
 // MODELS
 ////////////////////////////////
-const genderEnum = ["Male", "Female", "Unknown"]
-const kindEnum = ["Cat", "Dog", "Bird", "Fish", "Lizard", "Snake", "Rabbit", "Hamster", "Guinea Pig", "Ferret", "Turtle", "Other"]
-const spayNeutEnum = ["Spayed", "Neutered", "Intact"]
+const genderEnum = ["male", "female", "unknown"]
+const kindEnum = ["cat", "dog", "bird", "fish", "lizard", "snake", "rabbit", "hamster", "guinea pig", "ferret", "turtle", "other"]
+const spayNeutEnum = ["spayed", "neutered", "intact"]
 
 const PetSchema = new Schema({
     name: {

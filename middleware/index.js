@@ -1,7 +1,6 @@
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 require('dotenv').config()
-const multer = require("multer");
 
 const SALT_ROUNDS = parseInt(process.env.SALT_ROUNDS)
 const APP_SECRET = process.env.APP_SECRET
@@ -50,17 +49,6 @@ const stripToken = (req, res, next) => {
     }
 }
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, "uploads/"); 
-    },
-    filename: function (req, file, cb) {
-        const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-        cb(null, file.fieldname + "-" + uniqueSuffix + ".jpg");
-    },
-});
-
-const upload = multer({ storage: storage });
 
 module.exports = {
     stripToken,
@@ -68,5 +56,4 @@ module.exports = {
     createToken,
     comparePassword,
     hashPassword,
-    upload,
 }

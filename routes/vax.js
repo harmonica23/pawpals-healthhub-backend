@@ -26,5 +26,11 @@ router.delete("/:id", vaxCtrl.delete)
 // VACCINE UPDATE ROUTE
 router.put("/:id", vaxCtrl.update)
 
+// VACCINE BY PET
+router.get("/pet/:id", vaxCtrl.vaxByPet)
+
+// DELETE VACCINE BY PET
+router.get("/pet/:id", vaxCtrl.deleteVaxByPet)
+
 
 module.exports = router

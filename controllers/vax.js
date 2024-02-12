@@ -62,11 +62,35 @@ async function update(req, res, next) {
     }
 };
 
+// VACCINES BY PET
+async function vaxByPet(req, res, next) {
+    try {
+        res.json(
+            await Vax.find({pet:req.params.id})
+        );
+    } catch (error) {
+        res.status(400).json(error);
+    }
+};
+
+// VACCINES BY PET
+async function deleteVaxByPet(req, res, next) {
+    try {
+        res.json(
+            await Vax.find({pet:req.params.id})
+        );
+    } catch (error) {
+        res.status(400).json(error);
+    }
+};
+
 // EXPORT Controller Action
 module.exports = {
     index,
     create,
     show,
     delete: destroy,
-	update
+	update,
+    vaxByPet,
+    deleteVaxByPet
 }

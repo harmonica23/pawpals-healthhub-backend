@@ -62,11 +62,35 @@ async function update(req, res, next) {
     }
 };
 
+// VET CONSULTS BY PET
+async function vetByPet(req, res, next) {
+    try {
+        res.json(
+            await VetConsult.find({pet:req.params.id})
+        );
+    } catch (error) {
+        res.status(400).json(error);
+    }
+};
+
+// DELETE VET CONSULTS BY PET
+async function deleteVetByPet(req, res, next) {
+    try {
+        res.json(
+            await VetConsult.find({pet:req.params.id})
+        );
+    } catch (error) {
+        res.status(400).json(error);
+    }
+};
+
 // EXPORT Controller Action
 module.exports = {
     index,
     create,
     show,
     delete: destroy,
-	update
+	update,
+    vetByPet,
+    deleteVetByPet
 }
