@@ -77,7 +77,7 @@ async function vaxByPet(req, res, next) {
 async function deleteVaxByPet(req, res, next) {
     try {
         res.json(
-            await Vax.find({pet:req.params.id})
+            await Vax.findByIdAndDelete({pet:req.params.id})
         );
     } catch (error) {
         res.status(400).json(error);

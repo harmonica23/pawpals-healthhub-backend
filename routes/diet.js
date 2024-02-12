@@ -30,6 +30,6 @@ router.put("/:id", dietCtrl.update)
 router.get("/pet/:id", dietCtrl.dietsByPet)
 
 // DELETE DIET BY PET
-router.get("/pet/:id", dietCtrl.deleteDietsByPet)
+router.delete("/pet/:id", dietCtrl.deleteDietsByPet)
 
 module.exports = router

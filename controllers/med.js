@@ -76,7 +76,7 @@ async function medsByPet(req, res, next) {
 async function deleteMedsByPet(req, res, next) {
     try {
         res.json(
-            await Med.find({pet:req.params.id})
+            await Med.findByIdAndDelete({pet:req.params.id})
         );
     } catch (error) {
         res.status(400).json(error);

@@ -78,7 +78,7 @@ async function incidentsByPet(req, res, next) {
 async function deleteIncidentsByPet(req, res, next) {
     try {
         res.json(
-            await Incident.find({ pet: req.params.id })
+            await Incident.findByIdAndDelete({ pet: req.params.id })
         );
     } catch (error) {
         res.status(400).json(error);

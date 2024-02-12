@@ -30,7 +30,7 @@ router.put("/:id", medCtrl.update)
 router.get("/pet/:id", medCtrl.medsByPet)
 
 // DELETE MED BY PET
-router.get("/pet/:id", medCtrl.deleteMedsByPet)
+router.delete("/pet/:id", medCtrl.deleteMedsByPet)
 
 
 

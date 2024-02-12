@@ -30,6 +30,6 @@ router.put("/:id", incidentCtrl.update)
 router.get("/pet/:id", incidentCtrl.incidentsByPet)
 
 // DELETE INCIDENTS BY PET
-router.get("/pet/:id", incidentCtrl.deleteIncidentsByPet)
+router.delete("/pet/:id", incidentCtrl.deleteIncidentsByPet)
 
 module.exports = router

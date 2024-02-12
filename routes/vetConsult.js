@@ -30,7 +30,7 @@ router.put("/:id", vetConsultCtrl.update)
 router.get("/pet/:id", vetConsultCtrl.vetByPet)
 
 // DELETE VET CONSULT BY PET
-router.get("/pet/:id", vetConsultCtrl.deleteVetByPet)
+router.delete("/pet/:id", vetConsultCtrl.deleteVetByPet)
 
 
 module.exports = router
