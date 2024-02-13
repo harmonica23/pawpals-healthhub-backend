@@ -18,8 +18,8 @@ const DietSchema = new Schema({
         required: true,
         maxlength: 50,
     },
-    cups: {
-        type: Number,
+    amount: {
+        type: String,
         required: true,
     },
     frequency: {
