@@ -14,25 +14,20 @@ const MedSchema = new Schema({
         ref: "Pet",
     },
     name: {
-        type: String, 
-        required: true,
+        type: String,
     },
     dateStart: {
         type: Date,
-        required: true,
     },
     dateEnd: {
         type: Date,
-        required: false,
     },
     dose: {
         type: String,
-        required: false,
     },
     frequency: {
         type: String,
         enum: frequencyEnum,
-        required: false,
     },
 }, { timestamps: true });
 

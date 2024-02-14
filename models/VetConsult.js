@@ -14,8 +14,7 @@ const VetConsultSchema = new Schema({
         ref: "Pet",
     },
     date: {
-        type: Date, 
-        required: true,
+        type: Date
     },
     visitType: {
         type: String,

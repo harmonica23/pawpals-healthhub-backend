@@ -15,26 +15,21 @@ const DietSchema = new Schema({
     },
     brand: {
         type: String,
-        required: true,
         maxlength: 50,
     },
     amount: {
         type: String,
-        required: true,
     },
     frequency: {
         type: String,
         enum: frequencyEnum,
-        required: true,
     },
     feedingNotes: {
         type: String,
-        required: false,
         maxlength: 100,
     },
     weight: {
         type: Number,
-        required: false,
     },
 }, { timestamps: true });
 
