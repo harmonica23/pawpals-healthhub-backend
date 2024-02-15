@@ -21,7 +21,7 @@ const PetSchema = new Schema({
     },
     kind: {
         type: String,
-        emum: kindEnum,
+        enum: kindEnum,
         required: true,
     },
     gender: {
