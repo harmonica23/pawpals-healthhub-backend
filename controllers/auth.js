@@ -1,5 +1,6 @@
 const { User } = require('../models')
 const middleware = require('../middleware')
+const { uploadFile } = require('../utils/cloudStorage')
 
 const Register = async (req, res) => {
     try {
@@ -44,16 +45,12 @@ const Login = async (req, res) => {
 
 const UpdatePassword = async (req, res) => {
     try {
-        // Extracts the necessary fields from the request body
         const { oldPassword, newPassword } = req.body
-        // Finds a user by a particular field (in this case, the user's id from the URL param)
         let user = await User.findById(req.params.user_id)
-        // Checks if the password matches the stored digest
         let matched = await middleware.comparePassword(
             user.passwordDigest,
             oldPassword
         )
-        // If they match, hashes the new password, updates the db with the new digest, then sends the user as a response
         if (matched) {
             let passwordDigest = await middleware.hashPassword(newPassword)
             user = await User.findByIdAndUpdate(req.params.user_id, { passwordDigest })
@@ -75,9 +72,29 @@ const CheckSession = async (req, res) => {
     res.send(payload)
 }
 
+const UploadFile = async (req, res) => {
+    try {
+        if (!req.file) {
+            return res.status(400).json({ error: 'No file provided' });
+        }
+
+        const fileBuffer = req.file.buffer;
+        const fileName = req.file.originalname;
+
+        await uploadFile(fileBuffer, fileName);
+
+        res.status(200).json({ success: true, message: 'File uploaded successfully' });
+    } catch (error) {
+        console.error('Error uploading file:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
+
+
 module.exports = {
     Register,
     Login,
     UpdatePassword,
-    CheckSession
+    CheckSession,
+    UploadFile,
 }
