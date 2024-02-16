@@ -16,7 +16,7 @@ async function index(req, res, next) {
 
 // PET CREATE ACTION
 async function create(req, res, next) {
-    console.log(req.body)
+    req.body.owner = req.params.id
     try {
         const newPet = await Pet.create(req.body)
         res.json(newPet);

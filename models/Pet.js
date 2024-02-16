@@ -11,6 +11,10 @@ const kindEnum = ["cat", "dog", "bird", "fish", "lizard", "snake", "rabbit", "ha
 const spayNeutEnum = ["spayed", "neutered", "intact"]
 
 const PetSchema = new Schema({
+    owner: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    },
     name: {
         type: String, 
         required: true,

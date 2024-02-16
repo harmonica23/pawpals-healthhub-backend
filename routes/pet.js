@@ -14,7 +14,7 @@ const petCtrl = require('../controllers/pet')
 router.get("/", petCtrl.index)
 
 // PET CREATE ROUTE
-router.post("/", petCtrl.create)
+router.post("/user/:id", petCtrl.create)
 
 // PET SHOW ROUTE
 router.get("/:id", petCtrl.show)
@@ -24,6 +24,8 @@ router.delete("/:id", petCtrl.delete)
 
 // PET UPDATE ROUTE
 router.put("/:id", petCtrl.update)
+
+
 
 
 module.exports = router
