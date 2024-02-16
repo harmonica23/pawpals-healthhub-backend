@@ -11,7 +11,7 @@ const petCtrl = require('../controllers/pet')
 ////////////////////////////////
 
 // PET INDEX ROUTE
-router.get("/", petCtrl.index)
+router.get("/user/:id", petCtrl.index)
 
 // PET CREATE ROUTE
 router.post("/user/:id", petCtrl.create)

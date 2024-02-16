@@ -8,7 +8,7 @@ const { Pet } = require('../models')
 // PET INDEX ACTION
 async function index(req, res, next) {
     try {
-        res.json(await Pet.find({}));
+        res.json(await Pet.find({owner: req.params.id}));
     } catch (error) {
         res.status(400).json(error);
     }
